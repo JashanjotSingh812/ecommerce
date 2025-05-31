@@ -89,34 +89,70 @@ const Orders = () => {
   const [orderData, setOrderData] = useState([]);
 
   // ✅ Improved version of loadOrderData
-  const loadOrderData = async () => {
-    try {
-      if (!token) return;
+  // const loadOrderData = async () => {
+  //   try {
+  //     if (!token) return;
 
-      const response = await axios.post(
-        backendUrl + '/api/order/userOrders',
-        {},
-        { headers: { token } }
-      );
+  //     const response = await axios.post(
+  //       backendUrl + '/api/order/userOrders',
+  //       {},
+  //       { headers: { token } }
+  //     );
 
-      if (response.data.success) {
-        let allOrderItems = [];
+  //     if (response.data.success) {
+  //       let allOrderItems = [];
 
-        response.data.orders.map((order)=>{
-            order.items.map((item)=>{
-              item['status'] = order.status
-              item['payment'] = order.payment
-              item['paymentMethod'] = order.paymentMethod
-              item['date'] = order.date
-              allOrderItems.push(item)
-            })
-          })
-        setOrderData(allOrderItems.reverse());
-      }
-    } catch (error) {
-      console.error('Error loading order data:', error);
+  //       response.data.orders.map((order)=>{
+  //           order.items.map((item)=>{
+  //             item['status'] = order.status
+  //             item['payment'] = order.payment
+  //             item['paymentMethod'] = order.paymentMethod
+  //             item['date'] = order.date
+  //             allOrderItems.push(item)
+  //           })
+  //         })
+  //       setOrderData(allOrderItems.reverse());
+  //     }
+  //   } catch (error) {
+  //     console.error('Error loading order data:', error);
+  //   }
+  // };
+     const loadOrderData = async () => {
+  try {
+    if (!token) return;
+
+    const response = await axios.post(
+      backendUrl + '/api/order/userOrders',
+      {},
+      { headers: { token } }
+    );
+
+    if (response.data.success) {
+      let allOrderItems = [];
+
+      response.data.orders.map((order) => {
+        console.log("🧾 Raw order.items:", order.items); // Add this to debug
+
+        // Try to parse if items is a string
+        let itemsArray = Array.isArray(order.items)
+          ? order.items
+          : JSON.parse(order.items || '[]');
+
+        itemsArray.map((item) => {
+          item['status'] = order.status;
+          item['payment'] = order.payment;
+          item['paymentMethod'] = order.paymentMethod;
+          item['date'] = order.date;
+          allOrderItems.push(item);
+        });
+      });
+
+      setOrderData(allOrderItems.reverse());
     }
-  };
+  } catch (error) {
+    console.error('Error loading order data:', error);
+  }
+};
 
   useEffect(() => {
     loadOrderData();
