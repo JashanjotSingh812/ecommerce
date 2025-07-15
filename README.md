@@ -1,6 +1,6 @@
-# 🛍️ MERN Stack E-commerce Website
+# 🛍️ MERN Stack E-commerce Website (with MySQL)
 
-A fully-featured e-commerce web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). The website supports user authentication, product management, shopping cart, order placement, and multiple payment methods including Razorpay, Stripe, and Cash on Delivery.
+A fully-featured e-commerce web application built using the MERN stack (MySQL, Express.js, React.js, Node.js). This project includes features such as user authentication, product management, shopping cart, order placement, and multiple payment methods including Razorpay, Stripe, and Cash on Delivery.
 
 ---
 
@@ -33,7 +33,7 @@ A fully-featured e-commerce web application built using the MERN stack (MongoDB,
 ### Backend:
 - Node.js
 - Express.js
-- MongoDB (with Mongoose)
+- MySQL (via Sequelize ORM)
 - JWT for Authentication
 - Multer (File Upload)
 - Cloudinary (Image Hosting)
@@ -57,15 +57,12 @@ project-root/
 │ └── index.js
 ├── server/ # Node.js Backend
 │ └── controllers/
-│ └── models/
+│ └── models/ # Sequelize models
 │ └── routes/
 │ └── middleware/
-│ └── config/
+│ └── config/ # DB and Cloudinary config
 │ └── server.js
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -74,21 +71,23 @@ Edit
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/mern-ecommerce.git
-cd mern-ecommerce
-2. Setup Backend
+https://github.com/JashanjotSingh812/ecommerce
+cd backend
+2. Setup Backend (Node + Express + MySQL)
 bash
 Copy
 Edit
 cd server
 npm install
-Create a .env file inside /server directory:
-
+Create .env file inside /server:
 env
 Copy
 Edit
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=ecommerce
 JWT_SECRET=your_jwt_secret
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
@@ -96,21 +95,24 @@ CLOUDINARY_API_SECRET=your_api_secret
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 STRIPE_SECRET_KEY=your_stripe_secret_key
-Then start the server:
+Setup MySQL Database
+sql
+Copy
+Edit
+CREATE DATABASE ecommerce;
+The Sequelize models will sync automatically when the server starts.
 
 bash
 Copy
 Edit
 npm run dev
-3. Setup Frontend
+3. Setup Frontend (React)
 bash
 Copy
 Edit
 cd ../client
 npm install
 npm start
-Your frontend will run at http://localhost:3000 and backend at http://localhost:5000.
-
 🔐 API Endpoints Overview
 Auth Routes
 POST /api/user/register – Register user
@@ -146,25 +148,22 @@ Add screenshots of your homepage, product page, cart, and admin panel here.
 🛡️ Security Measures
 Passwords hashed using bcrypt
 
-JWT for route protection
+JWT-based authentication and route protection
 
-Admin-only access control
+Role-based access control (Admin/User)
 
-CORS enabled for secure API calls
+CORS and input sanitization
 
 📌 Future Improvements
 Product reviews and ratings
 
 Wishlist feature
 
-Order cancellation/refund system
-
 Email notifications
 
-Admin dashboard with analytics
+Coupon system
 
-👨‍💻 Author
-Jashanjot Singh
-GitHub: https://github.com/yourusername
-LinkedIn: https://linkedin.com/in/yourprofile
+Admin dashboard with charts and analytics
+
+
 
