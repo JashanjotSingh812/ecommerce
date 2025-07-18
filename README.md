@@ -144,12 +144,7 @@ GET /api/user/orders – View user’s order history
 
 🖼️ Screenshots
 Add screenshots of your homepage, product page, cart, and admin panel here.
-<img width="1913" height="833" alt="Screenshot 2025-07-18 172023" src="https://github.com/user-attachments/assets/73baba1e-1b52-40d8-887f-bfbfe8454f7d" />
-<img width="1909" height="989" alt="Screenshot 2025-07-18 172246" src="https://github.com/user-attachments/assets/c876a473-8582-4de6-9182-dc2983515d9a" />
-<img width="1853" height="997" alt="Screenshot 2025-07-18 172338" src="https://github.com/user-attachments/assets/c63f6a79-46bf-4ac2-b8c0-3cb65a2b4751" />
-<img width="1783" height="992" alt="Screenshot 2025-07-18 172503" src="https://github.com/user-attachments/assets/377133b2-fade-4a56-a8d6-937b31f28816" />
-<img width="1817" height="982" alt="Screenshot 2025-07-18 172634" src="https://github.com/user-attachments/assets/e4b8555b-bdef-4259-9af5-0cf1174faf5f" />
-<img width="1783" height="863" alt="Screenshot 2025-07-18 172710" src="https://github.com/user-attachments/assets/0e7da6c9-379e-484f-bca1-ede3f8bb369e" />
+![image alt](https://github.com/JashanjotSingh812/ecommerce/blob/015a482a680f394d9f7c5b5a000041a7f0d7f87e/Screenshot%202025-07-18%20172023.png)
 
 
 🛡️ Security Measures
