@@ -143,8 +143,9 @@ GET /api/orders/:id – View order details
 GET /api/user/orders – View user’s order history
 
 🖼️ Screenshots
-![Image alt](<img width="1913" height="833" alt="image" src="https://github.com/user-attachments/assets/859a3f3a-1878-43f6-a0ff-90e9e59efe85" />
-)
+
+![Project Screenshot](https://github.com/user-attachments/assets/859a3f3a-1878-43f6-a0ff-90e9e59efe85)
+
 
 
 🛡️ Security Measures
