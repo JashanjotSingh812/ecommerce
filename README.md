@@ -143,8 +143,7 @@ GET /api/orders/:id – View order details
 GET /api/user/orders – View user’s order history
 
 🖼️ Screenshots
-Add screenshots of your homepage, product page, cart, and admin panel here.
-![image alt](https://github.com/JashanjotSingh812/ecommerce/blob/015a482a680f394d9f7c5b5a000041a7f0d7f87e/Screenshot%202025-07-18%20172023.png)
+![image alt](https://github.com/JashanjotSingh812/ecommerce/blob/2cde74b16369ad98ab78fc062fccb37ac4b608c4/Screenshot%202025-07-18%20172023.png)
 
 
 🛡️ Security Measures
