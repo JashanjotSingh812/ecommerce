@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../config/mysql.js";
+import sequelize from "../config/mysql.js"; 
+
 
 const Product = sequelize.define("Product", {
   id: {
@@ -61,3 +62,4 @@ export default Product;
 // const productModel=mongoose.models.product || mongoose.model("product",productSchema)
 
 // export default productModel
+
